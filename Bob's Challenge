@@ -1,0 +1,51 @@
+Bob's Challenge
+ 
+Stella and friends have set out on a vacation to Manali. They have booked accommodation in a resort and the resort authorities headed by Bob, organize Campfires every night as a part of their daily activities. Stella volunteered herself for an activity called the "Stick Game".
+
+Stella was given a total of N sticks. The length of i-th stick is Ai. Bob insists Stella choose any four sticks and make a rectangle with those sticks as its sides. Bob warns Stella not to break any of the sticks, she has to use sticks as a whole.
+ 
+Also, Bob wants that the rectangle formed should have the maximum possible area among all the rectangles that Stella can make. Stella takes this challenge up and overcomes it. You have to help her know whether it is even possible to create a rectangle. If yes, then tell the maximum possible area of the rectangle.
+ 
+Input Format:
+The first line of the input contains a single integer N denoting the number of sticks.
+The second line of each test case contains N space-separated integers A1, A2, ...,AN denoting the lengths of sticks.
+
+Output Format:
+Output a single line containing an integer representing the maximum possible area for rectangle or output -1, if it's impossible to form any rectangle using the available sticks.
+Refer sample input and output for formatting specifications.
+
+Sample Input 1:
+5
+1 2 3 1 2
+
+Sample Output 1:
+2
+
+Sample Input 2:
+4
+1 2 2 3
+
+Sample Output 2:
+-1
+
+
+Code:
+
+
+n=int(input())
+a=list(map(int,input().split(" ")))
+s=[]
+for i in a:
+    if i not in s:
+        if a.count(i)>=2 and i!=0:
+                s.append(i)
+    if a.count(i)>=4 and s.count(i)==1:
+        s.append(i)
+if len(s)<2:
+    r=-1
+else:
+    x=max(s)
+    s.remove(x)
+    y=max(s)
+    r=x*y
+print(r)
