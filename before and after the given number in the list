@@ -1,0 +1,79 @@
+Given a list of integers and a number, write a python function to find and return the sum of the elements of the list.
+Note: Don't add the given number and also the numbers present before and after the given number in the list .
+
+Sample Input 1:
+6    //list size
+1
+2
+3
+4
+6
+5
+4        //number
+
+Sample Output 1:
+8
+
+Sample Input 2:
+8    //list size
+1
+2
+3
+4
+6
+5
+1
+2
+5        //number
+
+Sample Output 2:
+12
+
+
+
+CODE:
+
+
+def dis(l,n):
+
+    c=[]
+
+    for i in range(len(l)):
+
+        if l[i]==n and i==0:
+
+            l[i]=0
+
+            l[i+1]=0
+
+        elif l[i]==n and i==len(l)-1:
+
+            l[i]=0
+
+            l[i-1]=0
+
+        elif l[i]==n:
+
+            l[i]=0
+
+            l[i+1]=0
+
+            l[i-1]=0
+
+    k=sum(l)
+
+    print(k)
+
+a=int(input())
+
+b=[]
+
+for i in range(a):
+
+    c=int(input())
+
+    b.append(c)
+
+d=int(input())
+
+dis(b,d)
