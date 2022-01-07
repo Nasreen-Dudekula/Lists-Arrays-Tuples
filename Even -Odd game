@@ -1,0 +1,155 @@
+Even -Odd game
+ 
+Many other games were also organized in Rita's college Festival. Rita found the Even-Odd game very interesting so with her friend's gang she participated in the game.
+ 
+                                                           
+ 
+The game rules were little-complicated to help Rita and her friend's in understanding the game rules and win it by writing a Python code for following rules.
+Rules:
+•Girls and boys were seated in alternative positions. On calling a number they should change their positions.
+•If the called number is even then those seated in odd positions should move to the next odd position in a column-wise manner.
+•If the called number is odd then those seated in even positions should move to next even position in a column-wise manner.
+•The person who calls the number should say if the move is valid or invalid.
+
+Input and output format:
+Input consists of integers indicating a number of rows and columns followed by the first seating matrix, followed by the number called and the second matrix after changing the positions.
+The Output consists of the strings saying “Valid move” or “Invalid move” 
+Print "Invalid move", if matrix not in form of given rows x columns.
+
+
+Sample Input and Output 1:
+Enter the rows
+4
+Enter the columns
+6
+Enter the 1st matrix
+GBGBGB 
+GBGBGB 
+GBGBGB 
+000000
+Enter the number
+6
+Enter the 2nd matrix
+ G0G0G0 
+ GBGBGB 
+ GBGBGB 
+ 0B0B0B
+Valid Move 
+
+Explanation: There are 4 rows and 6 columns and the matrix is according to that (4X6).There must be at least one zero rows (preferably the last one). Girls are on even positions and boys in an odd position. The number called is 6 which is an even number so the boys move to the next odd position and their earlier positions will become 0. 
+The resultant matrix is Valid because the boys have moved to the next odd position in the same column.
+
+Sample input and Output 2:
+Enter the rows
+7
+Enter the columns
+8
+Enter the 1st matrix
+GBGBGBGB
+GBGBGBGB
+GBGBGBGB
+GBGBGBGB
+00000000
+00000000
+00000000
+Enter the number
+13
+Enter the 2nd matrix
+0B0B0BGB
+GBGBGBGB
+GBGBGBGB
+GBGBGBGB
+G0G0G000
+00000000
+00000000
+Invalid Move 
+
+Explanation: There are 7 rows and 8 columns and the matrix is 7X8. The girls are seated in even positions and boys in odd positions. The number called is 13, an odd number. So the girls should move to the next even number in the same column and their earlier positions should become zero.
+In the resultant matrix, in the last column,  the girl’s positions are not changed.,Hence the move is invalid.
+
+
+
+
+
+CODE:
+
+
+
+
+m=int(input('Enter the rows\n'))
+n=int(input('Enter the columns\n'))
+s=''
+r=''
+flag=0
+temp=0
+print('Enter the 1st matrix')
+for i in range(m):
+    a=str(input())
+    if len(a)!=n:
+        flag=1
+        break
+    if (a[0]=='G'):
+        for i in range(0,len(a),2):
+            if a[i]!='G':
+                temp=1
+                break
+        for i in range(1,len(a),2):
+            if a[i]!='B':
+                temp=1
+                break
+    elif (a[0]=='B'):
+        for i in range(0,len(a),2):
+            if a[i]!='B':
+                temp=1
+                break
+        for i in range(1,len(a),2):
+            if a[i]!='G':
+                temp=1
+                break
+    elif a[0]=='0':
+        if a[i]!='0':
+            temp=1
+    if temp==1:
+        break
+    s=s+a
+if flag==1 or temp==1:
+    print('Invalid Move')
+else:
+    k=int(input('Enter the number\n'))
+    print('Enter the 2nd matrix')
+    for i in range(m):
+        b=str(input())
+        r=r+b
+    c=list(s)
+    d=list(s)
+    if k%2==0:
+        for i in range(n+1,len(s),2):
+            d[i]=c[i-n]
+        for i in range(1,n,2):
+            d[i]='0'
+        n1=list(r.split(' '))
+        q=''
+        for i in n1:
+            q=q+i
+        f=''
+        for i in d:
+            f=f+i
+        if q==f:
+            print('Valid Move')
+        else:
+            print('Invalid Move')
+    else:
+        for i in range(n,len(s),2):
+            d[i]=c[i-n]
+        for i in range(0,n,2):
+            d[i]='0'
+        f=''
+        for i in d:
+            f=f+i
+        g=f[:n]
+        h=f[n:]
+        l=g+' '+h
+        if r==l:
+            print('Valid Move')
+        else:
+            print('Invalid Move')
