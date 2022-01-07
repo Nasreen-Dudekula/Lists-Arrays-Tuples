@@ -1,0 +1,68 @@
+Competitive Test
+ 
+"Axcent Academy" has arranged for a competitive test for medical students from rural villages. Those successful students of the test will be awarded the scholarship for their NEET preparations at Axcent Academy. Benny, the co-coordinator and founder of the academy has given one problem for the first stage of the test. The problem goes like this:
+ 
+Given an array A1, A2, ..., AN, count the number of subarrays of array A which are non-decreasing.
+A subarrayA[i, j], where 1 ≤ i ≤ j ≤ N is a sequence of integers Ai, Ai+1, ..., Aj.
+A subarrayA[i, j] is non-decreasing if Ai ≤ Ai+1 ≤ Ai+2 ≤ ... ≤ Aj. Count the total number of such subarrays.
+ 
+Benny himself has not computed the solution of the problem. Write a program to help him find the answer for the same to evaluate the students.
+
+Input Format:
+The first line of input contains a single integer N denoting the size of array. Assume that the maximum value for N as 50.
+The second line contains N space-separated integers A1, A2, ...,AN denoting the elements of the array.
+
+Output Format:
+Output in a single line, the count of the total number of such subarrays.
+Refer sample input and output for formatting specifications.
+
+Sample Input 1:
+4
+1 4 2 3
+
+Sample Output 1:
+6
+
+Sample Input 2:
+3
+3 1 4
+
+Sample Output 2:
+4
+
+
+
+
+n=int(input())
+
+a=list(map(int,input().split(" ")))
+
+l=[[]]
+
+b=[]
+
+c=[]
+
+r=0
+
+for i in range(n+1):
+
+    for j in range(i):
+
+        l.append(a[j:i])
+
+for i in range(len(l)):
+
+    if len(l[i])>0:
+
+        b=list(l[i])
+
+        c=list(l[i])
+
+        c.sort()
+
+        if (b==c):
+
+            r=r+1
+
+print(r)
