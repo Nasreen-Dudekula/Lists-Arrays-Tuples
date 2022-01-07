@@ -1,0 +1,70 @@
+Write a python function which accepts a list of numbers and returns true, if 10, 20, 30, 40  appears in sequence in the list. Otherwise, it should return false.
+
+Sample Input 1:
+6    //list size
+3
+11
+10
+20
+30
+40
+
+Sample Output 1:
+True
+
+Sample Input 2:
+6    //list size
+3
+10
+11
+20
+30
+40
+
+Sample Output 2:
+False
+
+
+
+CODE:
+
+
+
+
+def dis(l):
+
+    n=len(l)
+
+    flag=0
+
+    for i in range(n):
+
+        if (l[i]==10):
+
+            if i+3<n:
+
+                if l[i+1]==20 and l[i+2]==30 and l[i+3]==40:
+
+                    flag=1
+
+                    break
+
+    if flag==1:
+
+        print('True')
+
+    else:
+
+        print('False')
+
+a=int(input())
+
+b=[]
+
+for i in range(a):
+
+    c=int(input())
+
+    b.append(c)
+
+dis(b)
