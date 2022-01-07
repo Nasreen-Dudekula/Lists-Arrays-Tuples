@@ -1,0 +1,86 @@
+List of Orders
+ 
+List of orders from amazon are given along with the departure date. The Amazon are adding features to their delivery management system in iterations. The Support desk is finding it difficult to filter the Trains with the departure dates from the data available.
+Can you please implement a date filter to help the Support desk with this regard?
+ 
+Input Format :
+The first line of input is an integer that corresponds to the number of records, 'n'.
+The next 'n' line corresponds to the records.
+The last line of input consists of the date to be filtered.
+ 
+Output format :
+The first line of the output is a set of comma seperated string containing the cargo name and date. 
+The next lines consists of the names of the cargos printed one next to  other seperated by new line.
+ 
+Refer to sample input and output for formatting specifications and more details.
+ 
+Sample Input 1:
+5
+Sparx_Shoes,11-12-2013
+Suits,29-12-2016
+SAMSUNG Mobiles,27-03-2017
+Tissot Watchs,10-04-2014
+Levis Denim,27-03-2017
+27-03-2016
+ 
+Sample Output 1:
+[('Sparx_Shoes', '11-12-2013'), ('Suits', '29-12-2016'), ('SAMSUNG Mobiles', '27-03-2017'), ('Tissot Watchs', '10-04-2014'), ('Levis Denim', '27-03-2017')]
+Suits
+SAMSUNG Mobiles
+Levis Denim
+ 
+Explanation for Sample:
+First line of the output contains the cargo details in the form of list of tuples.
+The next 3 lines are the cargo names, whose departure date is greater than the filter date.
+
+
+
+code:
+
+
+
+from datetime import datetime
+
+n=int(input())
+
+l=[]
+
+b=[]
+
+c=[]
+
+d=[]
+
+for i in range(n):
+
+    a=list(map(str,input().split(",")))
+
+    l.append(a)
+
+for i in l:
+
+    e=tuple(i)
+
+    d.append(e)
+
+print(d)
+
+s=str(input())
+
+r=datetime.strptime(s,"%d-%m-%Y").strftime("%Y-%m-%d")
+
+for i in l:
+
+    c.append(i[0])
+
+    m=i[1]
+
+    k=datetime.strptime(m,"%d-%m-%Y").strftime("%Y-%m-%d")
+
+    b.append(k)
+
+for i in range(n):
+
+    if b[i]>r:
+
+        print(c[i])
