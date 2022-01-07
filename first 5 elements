@@ -1,0 +1,76 @@
+Given a list of numbers, write a python function which returns true if one of the first 5 elements in the list is 11. Otherwise it should return false.
+
+The length of the list can be less than 5 also.
+
+Sample Input 1:
+6    //list size
+3
+11
+8
+9
+4
+11
+
+Sample Output 1:
+True
+
+Sample Input 2:
+3    //list size
+9
+4
+10
+
+Sample Output 2:
+False
+
+
+
+
+
+CODE:
+
+
+
+def dis(l):
+
+    flag=0
+
+    if len(l)<5:
+
+        for i in range(len(l)):
+
+            if l[i]==11:
+
+                flag=1
+
+                break
+
+    else:
+
+        for i in range(5):
+
+            if l[i]==11:
+
+                flag=1
+
+                break
+
+    if flag==1:
+
+        print('True')
+
+    else:
+
+        print('False')
+
+n=int(input())
+
+a=[]
+
+for i in range(n):
+
+    b=int(input())
+
+    a.append(b)
+
+dis(a)
