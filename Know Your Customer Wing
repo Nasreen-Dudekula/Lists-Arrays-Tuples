@@ -1,0 +1,40 @@
+Know Your Customer Wing
+ 
+The ICICI Bank are digitizing their KYC( Know Your Customer ) wing. The first step in their intiative is to parse a comma seperated string, which has user details.  Can you please automate this task of reading a comma seperated string and display the details of the user?
+ 
+Address is given comma-separated in the following order.
+(door-no,street,area,city,state,zipcode,country)
+split the string and print it in the format shown in the Sample Output.
+ 
+Input Format:
+Input is a comma seperated string, details of the customer.
+ 
+Output Format:
+Refer to sample output for formatting specifications and more details.
+ 
+Sample Input 1:
+721,12th stage,Gokulam,Mysuru,Karnataka,570002,India
+ 
+Sample Output 1:
+Door-no:721
+Street:12th stage
+Area:Gokulam
+City:Mysuru
+State:Karnataka
+Zipcode:570002
+Country:India
+
+
+
+Code:
+
+
+
+n=list(map(str,input().split(",")))
+print('Door-no:',n[0])
+print('Street:',n[1])
+print('Area:',n[2])
+print('City:',n[3])
+print('State:',n[4])
+print('Zipcode:',n[5])
+print('Country:',n[6])
