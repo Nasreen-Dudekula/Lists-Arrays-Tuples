@@ -1,0 +1,57 @@
+Encrypted Array
+
+Ramesh and Suresh working in a security agency, they receive secret Encrypted data from their officers. Every time they will hard to decode the Encrypted data, So Ramesh decided to write a program to decode the Encrypted data. The encrypted array is obtained by subtracting  ‘x’ with the exncrypted array elements , where ‘x’ is obtained by dividing the (sum of encrypted array) with ((length of encrypted array) – 1).
+
+                                                                                          Image result for encrypted data
+ 
+
+So can u help Ramesh to write a program to find the encrypted array?
+
+ Input Format Specifications:
+
+    The first line of input consists of the size of an Encrypted Array Integer.
+    The next line of input contains inputs to the Encrypted Array Integer.
+
+ Output Format Specifications:
+
+    The first line of output contains the Encrypted Array.
+    The second line of output contains the original Array.
+    The format will be shown below in the sample output.
+
+  Sample Input 1:
+  5
+ 12
+  7
+  8
+  9
+ 10
+ Sample Output 1:
+ [12, 7, 8, 9, 10]
+ -1 4 3 2 1
+ 
+ 
+ 
+ CODE:
+ 
+ 
+ 
+ 
+ n=int(input())
+
+l=[]
+
+for i in range(n):
+
+    a=int(input())
+
+    l.append(a)
+
+s=sum(l)//(n-1)
+
+print(l)
+
+for i in range(n):
+
+    r=s-l[i]
+
+    print(r,end=" ")
