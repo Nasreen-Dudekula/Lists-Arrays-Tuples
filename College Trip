@@ -1,0 +1,105 @@
+College Trip
+ 
+North Karnataka students planned a class trip to South Karnataka places. Students were very excited about the trip. They made a list of place that they wanted to visit. After a big discussion between the students, they shortlisted 3 best places: Madekeri, Mysore and Mangalore. Now Class leader Ram is confused about the location of the trip.
+ 
+
+So he decided to conduct voting to select the place. Students agreed with this option.
+Students who want to go Madikeri should vote 1, for Mysore vote 2 and for Mangalore they should vote 3.
+The place which got highest votes will be the trip location. He also warned them that, if more than one place got same highest number of votes then the trip will be cancelled.
+Help Ram to decide the place by wiriting a program.
+
+Input format:
+1st input is an integer, which indicates the Number of students, 'n'.
+Next 'n' lines of inputs indicates votes( either 1,2 or 3).
+
+Output format:
+First line of the output is the number of votes for 'Madikeri'.
+Second line of the output is the number of votes for 'Mysore'.
+Third line of the output is the number of votes for 'Mangalore'.
+Fourth line of the output is the number of invalid votes.
+Fifth line of the output consist of a string that indicates the location of the trip or "Trip cancelled".
+
+Sample Input1:
+5
+1
+1
+3
+3
+3
+Sample Output 1:
+2
+0
+3
+0
+Mangalore
+
+Sample input2:
+12
+1
+1
+3
+3
+3
+2
+2
+1
+1
+1
+3
+3
+Sample Output 2:
+5
+2
+5
+0
+Trip cancelled
+
+
+
+n=int(input())
+
+l=[]
+
+for i in range(n):
+
+    x=int(input())
+
+    l.append(x)
+
+a=l.count(1)
+
+b=l.count(2)
+
+c=l.count(3)
+
+d=0
+
+for i in range(n):
+
+    if l[i]!=1 and l[i]!=2 and l[i]!=3:
+
+        d+=1
+
+print(a)
+
+print(b)
+
+print(c)
+
+print(d)
+
+if a>b and a>c:
+
+    print('Madikeri')
+
+elif b>a and b>c:
+
+    print('Mysore')
+
+elif c>a and c>b:
+
+    print('Mangalore')
+
+else:
+
+    print('Trip cancelled')
