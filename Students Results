@@ -1,0 +1,101 @@
+Students Results
+ABS School aspires to get  good SSLC results in next upcoming year. So they want to prepare students who have passed the 9th standard final exam.The school decides to give free SSLC coaching to students. Headmaster told the class teacher to shortlist the students who have passed and failed in final exam of 9th standard. Now she wants to create list of students who have passed and list of students who have failed in the exam.
+    
+Help her to create new student lists. If student’s mark is less than 40 then he has failed failed otherwise he has passed.
+
+Input format:
+1st input indicates the number of students.
+Next lines of input indicate marks of students(Marks entered according to Roll No, Roll  No starts from 1).
+
+Output format:
+The output indicates Roll No of students who have failed and who have passed (Refer sample input-output format).
+All text in bold corresponds to the input and the rest corresponds to output.
+
+Sample Input 1:
+5
+78
+39
+45
+35
+89
+Sample Output 1:
+Students who failed in Final Exam
+Roll No: 2
+Roll No: 4
+Students who passed in Final Exam
+Roll No: 1
+Roll No: 3
+Roll No: 5
+
+Sample Input 2:
+6
+41
+67
+45
+80
+89
+67
+Sample Output 2:
+All are passed
+
+Sample Input 3:
+6
+39
+37
+35
+30
+29
+17
+Sample Output 3:
+All are failed
+
+
+
+code:
+
+
+n=int(input())
+
+a=[]
+
+f=[]
+
+p=[]
+
+for i in range(n):
+
+    c=int(input())
+
+    a.append(c)
+
+for i in range(n):
+
+    if a[i]<40:
+
+        f.append(i+1)
+
+    else:
+
+        p.append(i+1)
+
+if len(f)==n:
+
+    print('All are failed')
+
+elif len(p)==n:
+
+    print('All are passed')
+
+else:
+
+    print('Students who failed in Final Exam')
+
+    for i in f:
+
+        print('Roll No:',i)
+
+    print('Students who passed in Final Exam')
+
+    for i in p:
+
+        print('Roll No:',i)
